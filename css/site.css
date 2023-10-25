@@ -129,10 +129,7 @@ h1, h2, h3, h4, h5 {
 }
 
 #get_started {
-	position:absolute;
-	top: 5px;
-	right: 50px;
-	width: 80px;
+	padding-top: 50px
 }
 
 #grav_logo {

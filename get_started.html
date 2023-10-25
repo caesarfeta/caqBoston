@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:og="http://ogp.me/ns#"
+		xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta property="og:image" content="http://www.caqboston.com/img/icon/caq_logo_facebook.jpg"/>
+	<link rel="image_src" href="http://www.caqboston.com/img/icon/caq_logo_facebook.jpg"/>
+	<title>CAQ Boston -- Songs</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+	<link href="js/third-party/foundation-5.0.2.custom/css/normalize.css" rel="stylesheet" type="text/css">
+	<link href="js/third-party/foundation-5.0.2.custom/css/foundation.min.css" rel="stylesheet" type="text/css">
+	<link href="css/site.css" rel="stylesheet" type="text/css">
+</head>
+<body id="get_started">
+	<section id="extra-info">
+		<div id="panel">
+			<img id="logo" src="img/icon/new_logo.png"/>
+			<a id="to_top" class="link" href="#intro">To Top</a>
+			<a class="link" href="index.html">[Home]</a>
+		</div>
+	</section>
+	<!-- Introduction -->
+	<section id="get_started">
+			<div id="panel">
+		<div class="row">
+				<div class="columns small-12 medium-6 large-6">
+					<h2>Let us know more about you!</h2>
+					<form id="mail_form" action="mailto:info@caqboston.com" method="get" enctype="text/plain">
+						<label>First Name
+								<input id="first_name" type="text">
+						</label>
+						<label>Last Name
+								<input id="last_name" type="text">
+						</label>
+						<label>Phone
+								<input id="phone" type="text">
+						</label>
+						<label>Questions?
+								<textarea id="questions" type="text"></textarea>
+						</label>
+						<button class="button small">Send Message</button>
+					</form>
+					<div id="backup_plan" >If your email client doesn't load with the subject and body fields filled when you click "Send Message" then please copy and paste the text below into your email message body. Thanks!</div>
+					<textarea id="copy"></textarea>
+			</div>
+			<div class="columns small-12 medium-6 large-6">
+				<div class="block">
+					<div class="row">
+						<div id="social" class="small-12 medium-12 large-12 columns centered">
+							<h2>Join our next class!</h2>
+							<h4><a href="https://www.google.com/maps/place/730+Broadway/@42.400118,-71.113478,17z/data=!3m1!4b1!4m2!3m1!1s0x89e376d898e06d45:0xd62dec7aa032683c">730 Broadway, Somerville, MA 02144</a></h4>
+							  <h4>Thurs: 7:00 - 8:30 pm</h4>
+							  <h4>Sun: 7:00 - 8:30 pm</h4>
+								<img src="img/bg/our_friends.jpg" />
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	<!-- Javascript -->
+	<script type="text/javascript" src="js/third-party/foundation-5.0.2.custom/js/jquery.js"></script>
+	<script type="text/javascript" src="js/third-party/foundation-5.0.2.custom/js/modernizr.js"></script>
+	<script type="text/javascript" src="js/third-party/foundation-5.0.2.custom/js/foundation.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+		<script type="text/javascript">
+			$('input').add('textarea#questions').change(function(){
+				first_name=$('#first_name').val()
+				last_name=$('#last_name').val()
+				phone = $('#phone').val()
+				questions=$('#questions').val()
+				subject=encodeURIComponent('caqboston.com - '+first_name+' '+last_name)
+				body=encodeURIComponent(phone+'\n\r'+questions)
+				mailto='mailto:info@caqboston.com?subject='+subject+'&body='+body
+				document.getElementById('mail_form').action=mailto
+				$('#copy').val(first_name+' '+last_name+' '+phone+' '+questions )
+			})
+		</script>
+</body>
+</html>
